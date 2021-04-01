@@ -1,12 +1,12 @@
 module.exports = function(router, database) {
 
   router.get('/properties', (req, res) => {
-    database.getAllProperties(req.query, 20)
+    database.getAllProperties(req.query, 10)
     .then(properties => res.send({properties}))
     .catch(e => {
       console.error(e);
       res.send(e)
-    }); 
+    });
   });
 
   router.get('/reservations', (req, res) => {
